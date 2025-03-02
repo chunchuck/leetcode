@@ -92,7 +92,7 @@ T(N) = 15
 This can be easily verified.
 
 ### Original Problem
-Find integer `n` such that `T(n) >= target`:
+Find integer `n` such that `T(n) >= abs(target)`:
 ```
 n >= ceil( sqrt(2 * target + 0.25) - 0.5 )
 ```
