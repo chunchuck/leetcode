@@ -32,7 +32,8 @@ On the 2nd move, we step from 1 to 3 (2 steps).
 Find smallest N s.t. `1 +/- 2 +/- 3 +/- ... +/- N = target`
 
 ### Fact 1
-We can pick a subset of numbers in `[1, n]` and sum them to make any integers from `1` to `T(n) = (n^2 + n) / 2 = 1 + 2 + 3 + ... + n`.
+We can pick a subset of numbers in `[1, n]` and sum them to make any integers from `1` to `T(n)`, where
+`T(n) = 1 + 2 + 3 + ... + n = (n^2 + n) / 2`.
 ```
 e.g.
 1 = 1
