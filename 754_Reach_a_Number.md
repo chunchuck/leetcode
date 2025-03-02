@@ -32,7 +32,7 @@ On the 2nd move, we step from 1 to 3 (2 steps).
 Find smallest N s.t. `1 +/- 2 +/- 3 +/- ... +/- N = target`
 
 ### Fact 1
-We can pick a subset of numbers in `[1, n]` and sum them to make any integers from `1` to `T(n)`, where
+Every subset of `[1, n]` and their sums is mapped to every integer in `[1, T(n)]`, where
 `T(n) = 1 + 2 + 3 + ... + n = (n^2 + n) / 2`.
 ```
 e.g.
@@ -54,11 +54,14 @@ Proof by induction, suppose this is true for `n = k`. There are exactly k+1 numb
 - To make T(k) + k, we take away 1 from T(k) and add k+1
 - To make T(k) + k + 1, we add T(k) to k+1
 
+Therefore every number in `[1, T(k+1)]` is a sum of a subset of `[1, k+1]`.
+T(k+1) is the maximum sum of each of the subset in `[1, k+1]`, and each sum each subset of `[1, k+1]` is mapped to every number in `[1, T(k+1)]`
+
 Therefore Fact 1 is true for `n = k + 1`.
 Fact 1 is true for `n = 1`, Fact 1 is true for `n >= 1` by induction.
 
 ### Fact 2
-`1 +/- 2 +/- 3 +/- ... +/- N` can be:
+`1 +/- 2 +/- 3 +/- ... +/- N` can be mapped to:
 - every even integer in `[-T(N), T(N)]` if `T(N)` is even.
 - every odd integer in `[-T(N), T(N)]` if `T(N)` is odd.
 ```
@@ -69,8 +72,8 @@ e.g.
 _Proof_
 
 Consider T(N) - 2k, where 1 <= k <= T(N).
-1. from Fact 1, let `k` be the sum of a subset of numbers in `[1, N]`, `k` is in `[1, T(N)]`
-2. turn that subset of numbers into negative numbers in this sum `1 + 2 + ... + N`, which will equal T(N) - 2k.
+1. from Fact 1, `k` is the sum of a subset of numbers in `[1, N]`.
+2. turn that subset of numbers into negative numbers in this sum `1 + 2 + ... + N = T(N)`, the resulting sum will equal T(N) - 2k.
 ```
 e.g. N = 5
 T(N) = 15
@@ -82,8 +85,9 @@ T(N) = 15
 ...
 -15 = 15 - 2 * 15  = -1 - 2 - 3 - 4 - 5
 ```
-3. If T(N) is even, then T(N) - 2k is even.
-4. If T(N) is odd, then T(N) - 2k is odd.
+3. each sum of each subsets of `[1, N]` are mapped to every `k` in `[1, T(N)]`, and all possible expression of `1 +/- 2 +/- 3 +/- ... +/- N` are of the form T(N) - 2k.
+4. If T(N) is even, then T(N) - 2k is even.
+5. If T(N) is odd, then T(N) - 2k is odd.
 
 ### When is T(n) even or odd?
 - T(n) is even if n is `3 mod 4` or `0 mod 4`.
