@@ -99,6 +99,7 @@ n >= ceil( sqrt(2 * target + 0.25) - 0.5 )
 If `target` is even, find the smallest `a >= n` such that `T(a)` is even, and by Fact 2, numbers in the form `1 +/- 2 +/- ... +/- a` will include `target`.
 Vice versa for if `target` is odd.
 
+This should be a constant time solution.
 
 ### Code
 ```python
