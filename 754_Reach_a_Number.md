@@ -69,9 +69,8 @@ e.g.
 _Proof_
 
 Consider T(N) - 2k, where 1 <= k <= T(N).
-1. take `T(N) = 1 + 2 + ... + N`
-2. from Fact 1, let `k` be the sum of a subset of numbers in `[1, N]`, `k` is in `[1, T(N)]`
-3. turn that subset of numbers into negative numbers in this sum `1 + 2 + ... + N`, which will equal T(N) - 2k.
+1. from Fact 1, let `k` be the sum of a subset of numbers in `[1, N]`, `k` is in `[1, T(N)]`
+2. turn that subset of numbers into negative numbers in this sum `1 + 2 + ... + N`, which will equal T(N) - 2k.
 ```
 e.g. N = 5
 T(N) = 15
@@ -83,8 +82,8 @@ T(N) = 15
 ...
 -15 = 15 - 2 * 15  = -1 - 2 - 3 - 4 - 5
 ```
-4. If T(N) is even, then T(N) - 2k is even.
-5. If T(N) is odd, then T(N) - 2k is odd.
+3. If T(N) is even, then T(N) - 2k is even.
+4. If T(N) is odd, then T(N) - 2k is odd.
 
 ### When is T(n) even or odd?
 - T(n) is even if n is `3 mod 4` or `0 mod 4`.
