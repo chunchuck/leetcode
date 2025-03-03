@@ -48,7 +48,7 @@ _Proof_
 
 Proof by induction, suppose this is true for `n = k`. There are exactly k+1 numbers between T(k) and T(k+1)
 
-```T(k) + 1, T(k) + 2, ..., T(k) + k + 1```. 
+```T(k) + 1, T(k) + 2, ..., T(k) + k + 1 = T(k+1)```. 
 - To make T(k) + 1, we `sum([1, 2, ..., k-1, k+1])`.
 - To make T(k) + 2, we `sum([1, 2, ..., k-2, k, k+1])`.
 - ...
