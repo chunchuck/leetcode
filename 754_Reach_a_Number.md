@@ -100,7 +100,7 @@ Find integer `n` such that `T(n) >= abs(target)`:
 ```
 n >= ceil( sqrt(2 * target + 0.25) - 0.5 )
 ```
-If `target` is even, find the smallest `a >= n` such that `T(a)` is even, and by Fact 2, numbers in the form `+/- 1 +/- 2 +/- ... +/- a` will include `target`.
+If `target` is even, find the smallest `a >= n` such that `T(a)` is even, and by Fact 2, numbers in the form `+/- 1 +/- 2 +/- ... +/- a` will include `target`. T(x) is monotonically increasing so `a` is guaranteed to be the minimum.
 Vice versa for if `target` is odd.
 
 This should be a constant time solution.
